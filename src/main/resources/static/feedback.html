@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session Dashboard</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/feedback.css">
 </head>
 <body>
-    <main class="page">
-        <header class="topbar">
-            <div>
-                <div class="brand" id="sessionTitle">Session</div>
-                <p class="muted" id="sessionMeta"></p>
+    <header class="session-header">
+        <div class="session-header__inner">
+            <div class="session-heading">
+                <h1 id="sessionTitle">Session</h1>
+                <div class="session-meta-line">
+                    <span id="sessionMeta">Loading...</span>
+                    <span class="meta-divider" aria-hidden="true"></span>
+                    <span class="status-pill" id="sessionStatus">Active</span>
+                </div>
             </div>
-            <a class="btn secondary" href="comment.html">Back</a>
-        </header>
-        <section class="grid">
-            <a class="feature-card stack" id="reportLink" href="#"><h2>Report</h2><p class="muted">Company-style structured report</p></a>
-            <a class="feature-card stack" id="analyticsLink" href="#"><h2>Analytics</h2><p class="muted">Horizontal bar chart breakdown</p></a>
-            <section class="feature-card stack">
+            <a class="back-button" href="home.html">Back</a>
+        </div>
+    </header>
+
+    <main class="session-page">
+        <section class="feature-grid">
+            <a class="feature-card" id="reportLink" href="#">
+                <h2>Report</h2>
+                <p>Company-style structured report</p>
+                <span class="feature-button">View Report</span>
+            </a>
+
+            <a class="feature-card" id="analyticsLink" href="#">
+                <h2>Analytics</h2>
+                <p>Horizontal bar chart breakdown</p>
+                <span class="feature-button">View Analytics</span>
+            </a>
+
+            <section class="feature-card">
                 <h2>Raw Data Export</h2>
-                <p class="muted">Download feedback responses as Excel</p>
-                <button id="downloadBtn">Download Excel</button>
+                <p>Download feedback responses as Excel</p>
+                <button class="feature-button feature-button--primary" id="downloadBtn">Download Excel</button>
             </section>
         </section>
     </main>

@@ -1,443 +1,235 @@
-/* ========================================
-   Root Styles & Variables
-======================================== */
-
 :root {
-    --color-primary: #7c3aed;
-    --color-primary-dark: #6d28d9;
-    --color-primary-light: #ede9fe;
-
-    --color-text-white: #ffffff;
-    --color-text-dark: #1a1a1a;
-
-    --color-bg-light: #f8f7ff;
-    --color-date-bg: #e9e0f8;
-
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-
-    --radius-sm: 0.5rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.5rem;
-
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
-    --font-size-3xl: 3rem;
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #667085;
+    --line: #dfe3ea;
+    --primary: #4f46e5;
+    --primary-hover: #453bd8;
+    --soft-button: #f0f1f4;
+    --active-bg: #c9f8df;
+    --active-text: #08704b;
+    --expired-bg: #ffdede;
+    --expired-text: #971b1b;
+    --shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+    --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
 }
 
-/* ========================================
-   Reset & Base Styles
-======================================== */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
+    margin: 0;
     min-height: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.session-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+.session-header__inner {
+    width: min(1544px, calc(100% - 64px));
+    min-height: 150px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-
-    overflow-x: hidden;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* ========================================
-   Container
-======================================== */
-
-.container {
-    width: 100%;
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: var(--spacing-xl);
-}
-
-@media (max-width: 1024px) {
-    .container {
-        padding: var(--spacing-lg);
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: var(--spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: var(--spacing-sm);
-    }
-}
-
-/* ========================================
-   Header
-======================================== */
-
-.header {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    gap: var(--spacing-lg);
-
-    margin-bottom: var(--spacing-xl);
-
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-/* ========================================
-   Back Button
-======================================== */
-
-.back-btn {
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-
-    border: none;
-    border-radius: var(--radius-lg);
-
-    padding: 0.9rem 1.6rem;
-
-    font-size: var(--font-size-base);
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.back-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateX(-3px);
-}
-
-.back-btn:focus-visible {
-    outline: 2px solid var(--color-primary-dark);
-    outline-offset: 2px;
-}
-
-/* ========================================
-   Feedback Title
-======================================== */
-
-.feedback-title {
-    flex: 1;
-
-    text-align: center;
-
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-
-    color: var(--color-primary);
-
-    letter-spacing: -0.02em;
-
-    min-width: 220px;
-
+.session-heading h1 {
+    margin: 0 0 21px;
+    color: var(--text);
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.4px;
     word-break: break-word;
 }
 
-@media (max-width: 768px) {
-
-    .feedback-title {
-        order: 3;
-
-        width: 100%;
-
-        font-size: 2rem;
-
-        margin-top: var(--spacing-md);
-    }
+.session-meta-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.2;
 }
 
-@media (max-width: 480px) {
-
-    .feedback-title {
-        font-size: 1.5rem;
-    }
+.meta-divider {
+    width: 1px;
+    height: 18px;
+    background: #9aa3b2;
 }
 
-/* ========================================
-   Date Badge
-======================================== */
-
-.date-badge {
-    background-color: var(--color-date-bg);
-
-    color: var(--color-text-dark);
-
-    padding: 0.9rem 1.5rem;
-
-    border-radius: var(--radius-lg);
-
-    font-size: var(--font-size-base);
-    font-weight: 600;
-
-    white-space: nowrap;
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 999px;
+    background: var(--active-bg);
+    color: var(--active-text);
+    font-size: 14px;
+    font-weight: 800;
 }
 
-@media (max-width: 768px) {
-
-    .date-badge {
-        padding: 0.7rem 1.2rem;
-        font-size: var(--font-size-sm);
-    }
+.status-pill--expired {
+    background: var(--expired-bg);
+    color: var(--expired-text);
 }
 
-/* ========================================
-   Main Content
-======================================== */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: #eeeeef;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+}
 
-.main-content {
-    width: 100%;
-    flex: 1;
+.session-page {
+    width: min(1544px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 56px 0 80px;
+}
 
+.feature-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 35px;
 }
-
-@media (max-width: 1024px) {
-
-    .main-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
-    }
-}
-
-@media (max-width: 768px) {
-
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ========================================
-   Feature Card
-======================================== */
 
 .feature-card {
-    background-color: var(--color-primary-light);
-
-    border-radius: var(--radius-lg);
-
-    padding: var(--spacing-xl);
-
-    min-height: 300px;
-
+    min-height: 247px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding: 45px 38px 38px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+}
+
+.feature-card h2 {
+    margin: 0 0 22px;
+    color: var(--text);
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.feature-button {
+    width: 100%;
+    min-height: 50px;
+    margin-top: auto;
+    display: inline-flex;
     align-items: center;
-
-    gap: var(--spacing-lg);
-
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--soft-button);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background-color 0.25s ease;
-
-    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.08);
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-
-    background-color: #e6dbfa;
-
-    box-shadow: 0 14px 28px rgba(124, 58, 237, 0.18);
+.feature-button--primary {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 8px 13px rgba(79, 70, 229, 0.22);
 }
 
-@media (max-width: 480px) {
+.feature-button--primary:hover {
+    background: var(--primary-hover);
+}
+
+button.feature-button {
+    border-style: solid;
+}
+
+@media (max-width: 1100px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .session-header__inner,
+    .session-page {
+        width: calc(100% - 32px);
+    }
+
+    .session-header__inner {
+        min-height: auto;
+        padding: 28px 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .session-page {
+        padding-top: 36px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
 
     .feature-card {
         min-height: 220px;
-        padding: var(--spacing-lg);
-    }
-}
-
-/* ========================================
-   Feature Card Title
-======================================== */
-
-.feature-card__title {
-    background-color: var(--color-primary);
-
-    color: var(--color-text-white);
-
-    padding: 0.8rem 1.6rem;
-
-    border-radius: var(--radius-lg);
-
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-
-    text-align: center;
-}
-
-@media (max-width: 480px) {
-
-    .feature-card__title {
-        font-size: var(--font-size-base);
-        padding: 0.7rem 1.2rem;
-    }
-}
-
-/* ========================================
-   Feature Card Icon
-======================================== */
-
-.feature-card__icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--color-text-dark);
-}
-
-.feature-card__icon svg {
-    width: 85px;
-    height: 85px;
-
-    transition: transform 0.25s ease;
-}
-
-.feature-card:hover .feature-card__icon svg {
-    transform: scale(1.08);
-}
-
-@media (max-width: 768px) {
-
-    .feature-card__icon svg {
-        width: 70px;
-        height: 70px;
+        padding: 34px 26px 28px;
     }
 }
 
 @media (max-width: 480px) {
-
-    .feature-card__icon svg {
-        width: 56px;
-        height: 56px;
+    .session-heading h1 {
+        font-size: 24px;
     }
-}
 
-/* ========================================
-   Accessibility
-======================================== */
-
-button:focus-visible {
-    outline: 2px solid var(--color-primary-dark);
-    outline-offset: 2px;
-}
-
-/* ========================================
-   Reduced Motion
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    * {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
+    .meta-divider {
+        display: none;
     }
-}
-/* ========================================
-   Download Button
-======================================== */
 
-.download-btn {
-
-    background-color: var(--color-primary);
-
-    color: var(--color-text-white);
-
-    border: none;
-
-    border-radius: var(--radius-lg);
-
-    padding: 0.9rem 1.6rem;
-
-    font-size: var(--font-size-base);
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
-
-    margin-top: 0.5rem;
-}
-
-.download-btn:hover {
-
-    background-color: var(--color-primary-dark);
-
-    transform: translateY(-2px);
-}
-
-.download-btn:active {
-
-    transform: scale(0.98);
-}
-
-/* ========================================
-   Footer
-======================================== */
-
-.footer {
-
-    width: 100%;
-
-    height: 100px;
-
-    margin-top: auto;
-
-    background: linear-gradient(
-        135deg,
-        var(--color-primary),
-        var(--color-primary-dark)
-    );
-}
-
-@media (max-width: 480px) {
-
-    .footer {
-
-        height: 70px;
+    .back-button {
+        min-height: 42px;
     }
 }

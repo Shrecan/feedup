@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/analytics.css">
 </head>
 <body>
-    <main class="page">
-        <header class="topbar">
+    <header class="analytics-header">
+        <div class="analytics-header__inner">
             <div>
-                <div class="brand">Analytics</div>
-                <p class="muted" id="analyticsMeta"></p>
+                <h1>Analytics</h1>
+                <p id="analyticsMeta"></p>
             </div>
-            <a class="btn secondary" id="backLink" href="comment.html">Back</a>
-        </header>
-        <section id="analyticsContent" class="stack"></section>
+            <a class="back-button" id="backLink" href="comment.html">Back</a>
+        </div>
+    </header>
+
+    <main class="analytics-page">
+        <section id="analyticsContent" class="analytics-list"></section>
     </main>
     <script src="js/auth.js"></script>
     <script>requireLogin();</script>

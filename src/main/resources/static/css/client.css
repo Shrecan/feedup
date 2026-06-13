@@ -659,3 +659,157 @@ input:focus-visible {
 
     background: #6d28d9;
 }
+/* ========================================
+   LARGE MOBILE (430px)
+======================================== */
+
+@media (max-width: 430px) {
+
+    .header {
+        padding: 1.2rem 0;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .session-box {
+        padding: 0.85rem;
+    }
+
+    .session-value {
+        font-size: 0.9rem;
+    }
+
+    .question-info h3 {
+        font-size: 1rem;
+    }
+
+    .question-info p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .comment-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .email-section {
+        padding: 18px;
+    }
+}
+/* ========================================
+   MEDIUM MOBILE (390px)
+======================================== */
+
+@media (max-width: 390px) {
+
+    .main-container {
+        padding: 0.8rem;
+    }
+
+    .feedback-card {
+        padding: 0.9rem;
+        border-radius: 18px;
+    }
+
+    .rating-pill span {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .email-input {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .comment-section textarea {
+        min-height: 130px;
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        padding: 0.9rem;
+    }
+}
+/* ========================================
+   SMALL MOBILE (360px)
+======================================== */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.15rem;
+    }
+
+    .section-heading p {
+        font-size: 0.85rem;
+    }
+
+    .session-value {
+        font-size: 0.85rem;
+    }
+
+    .question-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .question-info p {
+        font-size: 0.82rem;
+    }
+
+    .rating-pill span {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+    }
+
+    .email-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        font-size: 0.95rem;
+    }
+}
+/* ========================================
+   EXTRA SMALL DEVICES (320px)
+======================================== */
+
+@media (max-width: 320px) {
+
+    .main-container {
+        padding: 0.5rem;
+    }
+
+    .feedback-card {
+        padding: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .session-box {
+        padding: 0.7rem;
+    }
+
+    .rating-pill span {
+        padding: 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .comment-section textarea {
+        min-height: 120px;
+        padding: 0.8rem;
+    }
+
+    .submit-btn {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+}

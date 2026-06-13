@@ -2,22 +2,44 @@ async function loadSessions() {
     const list = document.getElementById("sessionList");
     const response = await fetch("/api/session/all");
     const sessions = await response.json();
+    const intro = document.getElementById("homeIntro");
 
     if (!sessions.length) {
-        list.innerHTML = "<p class=\"muted\">No feedback sessions found.</p>";
+        intro.hidden = false;
+        list.className = "sessions-empty";
+        list.innerHTML = "<p>No feedback sessions found.</p>";
         return;
     }
 
+    intro.hidden = true;
+    list.className = "sessions-grid";
     list.innerHTML = sessions.map(session => `
         <section class="session-card">
-            <span class="badge ${session.active ? "green" : "red"}">${session.active ? "Active" : "Expired"}</span>
-            <h3>${session.sessionName}</h3>
-            <p class="muted">Responses: ${session.feedbackCount}</p>
-            <p class="muted">Created: ${new Date(session.createdAt).toLocaleString()}</p>
-            <p class="muted">Expires: ${new Date(session.expiresAt).toLocaleString()}</p>
-            <a class="btn secondary" href="feedback.html?session=${session.sessionLink}">Open Details</a>
-            <button class="secondary" data-expire="${session.id}">Expire Now</button>
-            <button data-delete="${session.id}">Delete</button>
+            <div class="session-status-row">
+                <span class="status-pill ${session.active ? "status-pill--active" : "status-pill--expired"}">${session.active ? "Active" : "Expired"}</span>
+            </div>
+            <div class="session-body">
+                <h3>${session.sessionName}</h3>
+                <dl class="session-meta">
+                    <div>
+                        <dt>Responses:</dt>
+                        <dd>${session.feedbackCount}</dd>
+                    </div>
+                    <div>
+                        <dt>Created:</dt>
+                        <dd>${new Date(session.createdAt).toLocaleString()}</dd>
+                    </div>
+                    <div>
+                        <dt>Expires:</dt>
+                        <dd>${new Date(session.expiresAt).toLocaleString()}</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="session-actions">
+                <a class="session-btn session-btn--light" href="feedback.html?session=${session.sessionLink}">Open Details</a>
+                <button class="session-btn session-btn--light" type="button" data-expire="${session.id}">Expire Now</button>
+                <button class="session-btn session-btn--danger" type="button" data-delete="${session.id}">Delete</button>
+            </div>
         </section>
     `).join("");
 

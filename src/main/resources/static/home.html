@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeedUp Admin</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <main class="page">
-        <header class="topbar">
-            <div class="brand">FeedUp</div>
-            <div class="topbar">
-                <a class="btn secondary" href="comment.html">View All Comments</a>
-                <a class="btn" href="createses.html">Create Session</a>
-                <button class="secondary" onclick="logout()">Logout</button>
-            </div>
-        </header>
-        <section class="panel stack">
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="home.html">FeedUp</a>
+            <nav class="header-actions" aria-label="Home actions">
+                <a class="nav-btn nav-btn--light" href="comment.html">View All Comments</a>
+                <a class="nav-btn nav-btn--primary" href="createses.html">Create Session</a>
+                <button class="logout-btn" type="button" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home-page">
+        <section class="hero-card" id="homeIntro">
             <h1>Feedback Management System</h1>
-            <p class="muted">Manage feedback sessions, expire sessions, delete sessions, and review global comments.</p>
+            <p>Manage feedback sessions, expire sessions, delete sessions, and review global comments.</p>
         </section>
-        <section class="stack" style="margin-top: 24px;">
+
+        <section class="sessions-section">
             <h2>Sessions</h2>
-            <div id="sessionList" class="grid"></div>
+            <div id="sessionList" class="sessions-grid"></div>
         </section>
     </main>
     <script src="js/auth.js"></script>

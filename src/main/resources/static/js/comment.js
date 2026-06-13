@@ -4,18 +4,26 @@ async function loadComments() {
     const comments = await response.json();
 
     if (!comments.length) {
-        list.innerHTML = "<section class=\"panel\"><p class=\"muted\">No comments found.</p></section>";
+        list.innerHTML = "<section class=\"empty-comments\"><p>No comments found.</p></section>";
         return;
     }
 
     list.innerHTML = comments.map(comment => `
-        <a class="session-card" href="feedback.html?session=${comment.sessionLink}">
-            <h3>${comment.name || "Name not provided"}</h3>
-            <p><strong>Email:</strong> ${comment.email}</p>
-            <p><strong>Session:</strong> ${comment.sessionName}</p>
-            <p><strong>Timestamp:</strong> ${new Date(comment.timestamp).toLocaleString()}</p>
-            <p><strong>Rating Summary:</strong> ${comment.ratingSummary}%</p>
-            <p class="muted">${comment.comments || "No comment text provided."}</p>
+        <a class="comment-card" href="feedback.html?session=${comment.sessionLink}">
+            <div class="comment-top">
+                <div>
+                    <h2>${comment.name || "Name not provided"}</h2>
+                    <p class="comment-email">${comment.email}</p>
+                </div>
+            </div>
+            <div class="comment-meta">
+                <p><strong>Session:</strong> <span>${comment.sessionName}</span></p>
+                <p><strong>Rating Summary:</strong> <span>${comment.ratingSummary}%</span></p>
+                <p><strong>Submitted:</strong> <span>${new Date(comment.timestamp).toLocaleString()}</span></p>
+            </div>
+            <div class="comment-body">
+                <p>${comment.comments || "No comment text provided."}</p>
+            </div>
         </a>
     `).join("");
 }

@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generated Link</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/generate.css">
 </head>
 <body>
-    <main class="page">
-        <header class="topbar">
-            <div class="brand">FeedUp</div>
-            <a class="btn secondary" href="home.html">Home</a>
-        </header>
-        <section class="panel stack">
+    <header class="generate-header">
+        <div class="generate-header__inner">
+            <a class="brand" href="home.html">FeedUp</a>
+            <a class="home-button" href="home.html">Home</a>
+        </div>
+    </header>
+
+    <main class="generate-page">
+        <section class="link-card">
             <h1>Generated Session Link</h1>
-            <div class="link-box">
+            <div class="link-row">
                 <input type="text" id="generatedLink" readonly>
                 <button id="copyLinkBtn">Copy Link</button>
             </div>
-            <a class="btn secondary" href="comment.html">View Sessions</a>
+            <a class="view-sessions-button" href="home.html">View Sessions</a>
         </section>
     </main>
     <script src="js/auth.js"></script>

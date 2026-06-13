@@ -1,445 +1,219 @@
-/* ========================================
-   Root Styles & Variables
-   ======================================== */
-
 :root {
-    --color-primary: #7c3aed;
-    --color-primary-dark: #6d28d9;
-    --color-primary-light: #ede9fe;
-    --color-meta-bg: #ddd6fe;
-
-    --color-text-dark: #1a1a1a;
-    --color-text-light: #4b5563;
-    --color-text-white: #ffffff;
-
-    --color-bg-light: #f8f7ff;
-    --color-border: #e9e5ff;
-
-    --shadow-sm: 0 4px 12px rgba(124, 58, 237, 0.08);
-
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-
-    --radius-sm: 0.5rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.5rem;
-
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2.5rem;
-
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #667085;
+    --line: #dedede;
+    --button: #d0d0d2;
+    --shadow: 0 5px 18px rgba(15, 23, 42, 0.08);
 }
 
-/* ========================================
-   Reset & Base Styles
-   ======================================== */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
+    margin: 0;
     min-height: 100%;
 }
 
 body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        'Roboto',
-        'Oxygen',
-        'Ubuntu',
-        'Cantarell',
-        'Helvetica Neue',
-        sans-serif;
-
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ========================================
-   Container
-   ======================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-.container {
-    /* width: 100%;
-    max-width: 1200px;
-
+.comments-page {
+    width: min(1378px, calc(100% - 64px));
     margin: 0 auto;
-    padding: var(--spacing-lg); */
-    width: 100%;
-    max-width: 1500px;
-
-    margin: 0 auto;
-    padding: var(--spacing-xl);
+    padding: 47px 0 48px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: var(--spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: var(--spacing-sm);
-    }
-}
-
-/* ========================================
-   Header
-   ======================================== */
-
-.header {
+.comments-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spacing-md);
-    position: relative;
-
-    /* margin-bottom: var(--spacing-xl); */
-    margin-bottom: 4rem;
-
+    gap: 24px;
+    margin-bottom: 63px;
 }
 
-/* ========================================
-   Back Button
-   ======================================== */
-
-.back-btn {
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-
-    border: none;
-    border-radius: var(--radius-lg);
-
-    padding: 0.8rem 1.5rem;
-
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+.comments-header h1 {
+    margin: 0;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
-.back-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateX(-2px);
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 77px;
+    min-height: 47px;
+    padding: 0 19px;
+    border-radius: 8px;
+    background: #E6E6E6;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
 }
-
-.back-btn:focus-visible {
-    outline: 2px solid var(--color-primary-dark);
-    outline-offset: 2px;
-}
-
-/* ========================================
-   Page Title
-   ======================================== */
-
-.page-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    text-align: center;
-
-    /* font-size: var(--font-size-2xl); */
-    font-size: 3rem;
-    font-weight: var(--font-weight-bold);
-
-    color: var(--color-primary);
-
-    letter-spacing: -0.03em;
-}
-
-/* ========================================
-   Main Content
-   ======================================== */
-
-.main-content {
-    width: 100%;
-}
-
-/* ========================================
-   Comments List
-   ======================================== */
 
 .comments-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
+    display: grid;
+    gap: 31px;
 }
 
-/* ========================================
-   Comment Card
-   ======================================== */
-
 .comment-card {
-    background-color: var(--color-primary-light);
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-
-    /* padding: var(--spacing-lg); */
-    padding: 2.2rem;
-    min-height: 220px;
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    
-  
+    display: block;
+    overflow: hidden;
+    min-height: 314px;
+    background: var(--surface);
+    border: 1px solid #d7d7d7;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
 .comment-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
-    /* transform: translateY(-5px);
-
-    box-shadow: 0 18px 35px rgba(124, 58, 237, 0.18); */
+    border-color: #c8c8c8;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
 }
 
-/* ========================================
-   Comment Header
-   ======================================== */
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-sm);
-
-    flex-wrap: wrap;
+.comment-top {
+    min-height: 141px;
+    padding: 40px 33px 20px;
 }
 
-/* ========================================
-   Comment Email
-   ======================================== */
+.comment-top h2 {
+    margin: 0 0 18px;
+    font-size: 21px;
+    line-height: 1.1;
+    font-weight: 800;
+}
 
 .comment-email {
-    background-color: var(--color-meta-bg);
-
-    padding: 0.55rem 1rem;
-
-    border-radius: var(--radius-md);
-
-    /* font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold); */
-    font-size: 1.1rem;
-    font-weight: bold;
-
-    letter-spacing: 0.01em;
-
-    color: var(--color-text-dark);
-
-    word-break: break-word;
-}
-
-/* ========================================
-   Comment Date
-   ======================================== */
-
-.comment-date {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-
-    color: var(--color-text-light);
-}
-
-/* ========================================
-   Comment Text
-   ======================================== */
-
-.comment-text {
-    /* font-size: var(--font-size-base);
-    line-height: 1.7; */
-    font-size: 1.15rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.2;
     font-weight: 600;
-
-    line-height: 1.9;
-
-    color: var(--color-text-dark);
-
-    color: var(--color-text-dark);
-
-    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
-/* ========================================
-   Load More Section
-   ======================================== */
+.comment-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    padding: 0 33px 30px;
+}
 
-.load-more-section {
+.comment-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.comment-meta strong {
+    color: var(--text);
+    font-weight: 800;
+}
+
+.comment-meta span {
+    color: var(--muted);
+}
+
+.comment-body {
+    min-height: 96px;
     display: flex;
+    align-items: center;
+    padding: 26px 33px;
+    border-top: 1px solid var(--line);
+}
+
+.comment-body p {
+    margin: 0;
+    color: #555555;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+.empty-comments {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-
-    margin-top: var(--spacing-xl);
+    background: var(--surface);
+    border: 1px solid #d7d7d7;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
-/* ========================================
-   Load More Button
-   ======================================== */
-
-.load-more-btn {
-    background-color: transparent;
-    border: none;
-
-    color: var(--color-primary);
-
-    padding: var(--spacing-sm);
-
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        color 0.2s ease;
+.empty-comments p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
 }
 
-.load-more-btn:hover {
-    color: var(--color-primary-dark);
-    transform: translateY(4px);
-}
-
-.load-more-btn:focus-visible {
-    outline: 2px solid var(--color-primary-dark);
-    outline-offset: 2px;
-}
-
-.load-more-btn svg {
-    width: 32px;
-    height: 32px;
-
-    stroke-width: 2.5;
-}
-
-/* ========================================
-   Tablet Responsive
-   ======================================== */
-
-@media (max-width: 768px) {
-
-    .header {
-        margin-bottom: var(--spacing-lg);
+@media (max-width: 900px) {
+    .comments-page {
+        width: min(100% - 32px, 760px);
+        padding-top: 36px;
     }
 
-    .page-title {
-        font-size: 2rem;
+    .comments-header {
+        margin-bottom: 42px;
     }
 
-    .back-btn {
-        padding: 0.7rem 1.2rem;
-        font-size: var(--font-size-sm);
+    .comments-header h1 {
+        font-size: 40px;
+    }
+
+    .comment-meta {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .comments-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .comments-header h1 {
+        font-size: 34px;
+    }
+
+    .back-button {
+        min-height: 42px;
     }
 
     .comment-card {
-        padding: var(--spacing-md);
+        min-height: auto;
     }
 
-    .comment-text {
-        font-size: var(--font-size-sm);
-    }
-}
-
-/* ========================================
-   Mobile Responsive
-   ======================================== */
-
-@media (max-width: 480px) {
-
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
+    .comment-top,
+    .comment-meta,
+    .comment-body {
+        padding-left: 22px;
+        padding-right: 22px;
     }
 
-    .page-title {
-        width: 100%;
-
-        text-align: left;
-
-        font-size: 1.8rem;
-    }
-
-    .comment-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .comment-email,
-    .comment-date {
-        width: 100%;
-    }
-
-    .comment-text {
-        font-size: var(--font-size-sm);
-        line-height: 1.6;
-    }
-
-    .load-more-btn svg {
-        width: 26px;
-        height: 26px;
-    }
-}
-
-/* ========================================
-   Landscape Mobile
-   ======================================== */
-
-@media (max-height: 600px) and (orientation: landscape) {
-
-    .container {
-        padding: var(--spacing-sm);
-    }
-
-    .header {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .comments-list {
-        gap: var(--spacing-md);
-    }
-
-    .comment-card {
-        padding: var(--spacing-md);
-    }
-}
-
-/* ========================================
-   Reduced Motion
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .comment-top {
+        min-height: auto;
+        padding-top: 28px;
     }
 }

@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Session</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/createses.css">
 </head>
 <body>
-    <main class="page">
-        <header class="topbar">
-            <div class="brand">FeedUp</div>
-            <a class="btn secondary" href="home.html">Back</a>
-        </header>
-        <section class="panel stack">
+    <header class="create-header">
+        <div class="create-header__inner">
+            <a class="brand" href="home.html">FeedUp</a>
+            <a class="back-button" href="home.html">Back</a>
+        </div>
+    </header>
+
+    <main class="create-page">
+        <section class="create-card">
             <h1>Create Session</h1>
-            <label>Session Name<input type="text" id="sessionName" placeholder="Enter session name"></label>
-            <button id="generateLinkBtn">Generate Link</button>
-            <p id="message" class="muted"></p>
+            <label class="field-group" for="sessionName">
+                <span>Session Name</span>
+                <input type="text" id="sessionName" placeholder="Enter session name">
+            </label>
+            <button class="generate-button" id="generateLinkBtn">Generate Link</button>
+            <p id="message" class="message"></p>
         </section>
     </main>
     <script src="js/auth.js"></script>

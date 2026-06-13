@@ -1,651 +1,206 @@
-/* ========================================
-   Root Styles & Variables
-   ======================================== */
-
 :root {
-    --color-primary: #7c3aed;
-    --color-primary-dark: #6d28d9;
-    --color-primary-light: #efe5ff;
-    --color-accent-red: #dc2626;
-
-    --color-text-white: #ffffff;
-    --color-text-dark: #1f1f1f;
-
-    --color-bg-light: ghostwhite;
-    --color-divider: #d9c5ff;
-
-    --color-modal-bg: rgba(255, 255, 255, 0.88);
-
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-
-    --radius-sm: 0.5rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.5rem;
-
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.15rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2.5rem;
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #8a93a3;
+    --line: #dfe3ea;
+    --primary: #4f46e5;
+    --primary-hover: #453bd8;
+    --soft-button: #f0f1f4;
+    --shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+    --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
-/* ========================================
-   Reset & Base Styles
-   ======================================== */
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
+    margin: 0;
     min-height: 100%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ========================================
-   Container
-   ======================================== */
-
-.container {
-    width: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-lg);
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: var(--spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: var(--spacing-sm);
-    }
-}
-
-/* ========================================
-   Header
-   ======================================== */
-
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-xl);
-    z-index: 5;
-}
-
-.logo {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--color-primary);
-}
-
-.create-btn {
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-    border: none;
-    padding: 0.9rem 1.8rem;
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.create-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-}
-
-/* ========================================
-   Main Content
-   ======================================== */
-
-.main-content {
-    width: 100%;
-    flex: 1;
-    display: flex;
-    gap: var(--spacing-xl);
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
-}
-
-/* ========================================
-   Left Section
-   ======================================== */
-
-.left-section {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-
-@media (max-width: 768px) {
-    .left-section {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .left-section {
-        flex-direction: column;
-    }
-}
-
-/* ========================================
-   Stat Cards
-   ======================================== */
-
-.stat-card {
-    width: 100%;
-    background-color: var(--color-primary);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(161, 99, 247, 0.18);
-}
-
-.stat-card__label {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    color: var(--color-text-white);
-    margin-bottom: 0.7rem;
-}
-
-.stat-card__value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-text-white);
-}
-
-.stat-card--comments {
-    min-height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.comments-link {
-    color: var(--color-text-white);
+a {
+    color: inherit;
     text-decoration: none;
-    font-size: var(--font-size-lg);
-    font-weight: 600;
 }
 
-.comments-link:hover {
-    text-decoration: underline;
+button,
+input {
+    font: inherit;
 }
 
-/* ========================================
-   Back Button
-   ======================================== */
+.generate-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
 
-.back-btn {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--color-primary);
-    color: white;
+.generate-header__inner {
+    width: min(1556px, calc(100% - 64px));
+    height: 99px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.2s ease;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-.back-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateX(-3px);
+.brand {
+    color: var(--primary);
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.6px;
 }
 
-.back-btn svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* ========================================
-   Divider
-   ======================================== */
-
-.divider {
-    width: 2px;
-    background-color: var(--color-divider);
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .divider {
-        display: none;
-    }
-}
-
-/* ========================================
-   Modal Overlay
-   ======================================== */
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: center;
+.home-button {
+    display: inline-flex;
     align-items: center;
-    z-index: 50;
-    backdrop-filter: blur(4px);
-}
-
-/* ========================================
-   Modal
-   ======================================== */
-
-.modal {
-    width: 90%;
-    max-width: 500px;
-    background-color: var(--color-modal-bg);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-xl);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-}
-
-.modal__header {
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-.modal__title {
-    color: var(--color-primary);
-    font-size: var(--font-size-xl);
+    justify-content: center;
+    min-width: 82px;
+    min-height: 51px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: #eeeeef;
+    color: var(--text);
+    font-size: 16px;
     font-weight: 700;
 }
 
-.modal__body {
+.generate-page {
+    width: min(100%, 100vw);
+    min-height: calc(100vh - 99px);
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    padding: 56px 24px;
 }
 
-/* ========================================
-   Generated Link Box
-   ======================================== */
+.link-card {
+    width: min(804px, 100%);
+    height: fit-content;
+    padding: 55px 46px 46px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
 
-.modal__link-box {
+.link-card h1 {
+    margin: 0 0 44px;
+    color: var(--text);
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.link-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 143px;
+    gap: 18px;
+    margin-bottom: 32px;
+}
+
+#generatedLink {
     width: 100%;
-    background-color: white;
-    border-radius: var(--radius-md);
-    border: 2px solid transparent;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--spacing-sm);
-    transition: 0.2s ease;
+    height: 53px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0 18px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    outline: none;
 }
 
-.modal__link-box:hover {
-    border-color: var(--color-primary-light);
+#generatedLink:focus {
+    border-color: #a9b3c6;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
 }
 
-.modal__link {
-    flex: 1;
-    color: var(--color-primary-dark);
-    font-size: var(--font-size-base);
-    text-decoration: none;
-    word-break: break-all;
-    font-weight: 500;
-}
-
-.modal__link:hover {
-    text-decoration: underline;
-}
-
-/* ========================================
-   Copy Button
-   ======================================== */
-
-.copy-btn {
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: var(--radius-md);
-    padding: 0.8rem 1rem;
+#copyLinkBtn {
+    min-height: 53px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
-    transition: 0.2s ease;
-    display: flex;
+    box-shadow: 0 8px 13px rgba(79, 70, 229, 0.22);
+}
+
+#copyLinkBtn:hover {
+    background: var(--primary-hover);
+}
+
+#copyLinkBtn:active {
+    transform: translateY(1px);
+}
+
+.view-sessions-button {
+    width: 100%;
+    min-height: 55px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--soft-button);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 800;
 }
 
-.copy-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: scale(1.05);
-}
-
-.copy-btn svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* ========================================
-   Right Section
-   ======================================== */
-
-.right-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ========================================
-   Feedback List
-   ======================================== */
-
-.feedback-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.feedback-item {
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-    border-radius: var(--radius-lg);
-    padding: 1rem 1.4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.2s ease;
-    box-shadow: 0 4px 14px rgba(161, 99, 247, 0.14);
-}
-
-.feedback-item:hover {
-    transform: translateY(-2px);
-    background-color: var(--color-primary-dark);
-}
-
-.feedback-item__text {
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    word-break: break-word;
-}
-
-/* ========================================
-   Delete Button
-   ======================================== */
-
-.delete-btn {
-    background: transparent;
-    border: none;
-    color: #ff4d4d;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: var(--spacing-sm);
-    transition: 0.2s ease;
-}
-
-.delete-btn:hover {
-    transform: scale(1.1);
-}
-
-.delete-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* ========================================
-   Load More
-   ======================================== */
-
-.load-more {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--spacing-lg);
-}
-
-.load-more__btn {
-    background: transparent;
-    border: none;
-    color: var(--color-primary);
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.load-more__btn:hover {
-    transform: translateY(4px);
-    color: var(--color-primary-dark);
-}
-
-/* ========================================
-   Responsive
-   ======================================== */
-
-@media (max-width: 768px) {
-
-    .logo {
-        font-size: 2rem;
+@media (max-width: 760px) {
+    .generate-header__inner {
+        width: calc(100% - 32px);
+        height: 82px;
     }
 
-    .create-btn {
-        padding: 0.7rem 1.3rem;
+    .generate-page {
+        min-height: calc(100vh - 82px);
+        padding: 40px 16px;
     }
 
-    .stat-card {
-        min-width: 220px;
+    .link-card {
+        padding: 38px 26px 34px;
     }
 
-    .modal {
-        padding: var(--spacing-lg);
+    .link-card h1 {
+        margin-bottom: 34px;
+        font-size: 28px;
     }
 
-    .modal__link-box {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .copy-btn {
-        width: 100%;
+    .link-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 }
 
 @media (max-width: 480px) {
-
-    .logo {
-        font-size: 1.7rem;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: var(--spacing-md);
+    .generate-header__inner {
+        height: auto;
+        padding: 20px 0;
         align-items: flex-start;
-    }
-
-    .create-btn {
-        width: 100%;
-    }
-
-    .stat-card {
-        width: 100%;
-    }
-
-    .feedback-item {
-        flex-direction: row;
-        gap: var(--spacing-sm);
-    }
-}
-
-/* ========================================
-   Accessibility
-   ======================================== */
-
-button:focus-visible,
-a:focus-visible {
-    outline: 2px solid var(--color-primary-dark);
-    outline-offset: 2px;
-}
-
-/* ========================================
-   Reduced Motion
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        animation: none !important;
-        scroll-behavior: auto !important;
-    }
-}
-/* ========================================
-   Generated Link Modal Extra Styling
-   ======================================== */
-
-.modal__link-box {
-    width: 100%;
-    background-color: white;
-    border-radius: var(--radius-md);
-    padding: 1rem;
-    border: 2px solid transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--spacing-sm);
-
-    transition: 0.2s ease;
-}
-
-.modal__link-box:hover {
-    border-color: var(--color-primary);
-}
-
-/* Link Text */
-
-.modal__link {
-    flex: 1;
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    color: var(--color-primary-dark);
-    text-decoration: none;
-    word-break: break-all;
-}
-
-.modal__link:hover {
-    text-decoration: underline;
-}
-
-/* Copy Button */
-
-.copy-btn {
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-
-    border: none;
-    border-radius: var(--radius-md);
-
-    padding: 0.8rem 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transition: 0.2s ease;
-
-    flex-shrink: 0;
-}
-
-.copy-btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: scale(1.05);
-}
-
-.copy-btn:active {
-    transform: scale(0.96);
-}
-
-.copy-btn svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* Done Button */
-
-.modal__btn {
-    width: 100%;
-
-    background-color: var(--color-primary);
-    color: var(--color-text-white);
-
-    border: none;
-    border-radius: var(--radius-md);
-
-    padding: 1rem;
-
-    font-size: var(--font-size-base);
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: 0.2s ease;
-
-    margin-top: 0.5rem;
-}
-
-.modal__btn:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-}
-
-.modal__btn:active {
-    transform: scale(0.98);
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-
-    .modal__link-box {
         flex-direction: column;
-        align-items: stretch;
     }
 
-    .copy-btn {
-        width: 100%;
+    .home-button {
+        min-height: 42px;
+    }
+
+    .generate-page {
+        min-height: auto;
+        padding-top: 28px;
     }
 }

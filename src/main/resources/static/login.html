@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeedUp Login</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <main class="page">
-        <section class="panel stack">
-            <h1>FeedUp Login</h1>
-            <label>Username<input type="text" id="username" placeholder="Username"></label>
-            <label>Password<input type="password" id="password" placeholder="Password"></label>
-            <button id="loginBtn">Login</button>
-            <p id="errorMessage" class="muted"></p>
+    <main class="login-container">
+        <section class="login-card">
+            <h1 class="login-title">Login</h1>
+
+            <div class="form-stack">
+                <label class="input-wrap" for="username">
+                    <span class="field-label">Username</span>
+                    <input class="form-input" type="text" id="username" placeholder="Username">
+                </label>
+
+                <label class="input-wrap" for="password">
+                    <span class="field-label">Password</span>
+                    <input class="form-input" type="password" id="password" placeholder="Password">
+                </label>
+            </div>
+
+            <button class="login-btn" id="loginBtn">Login</button>
+            <p class="error-message" id="errorMessage"></p>
         </section>
     </main>
     <script src="js/login.js"></script>
