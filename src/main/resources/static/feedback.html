@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Dashboard</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <main class="page">
+        <header class="topbar">
+            <div>
+                <div class="brand" id="sessionTitle">Session</div>
+                <p class="muted" id="sessionMeta"></p>
+            </div>
+            <a class="btn secondary" href="comment.html">Back</a>
+        </header>
+        <section class="grid">
+            <a class="feature-card stack" id="reportLink" href="#"><h2>Report</h2><p class="muted">Company-style structured report</p></a>
+            <a class="feature-card stack" id="analyticsLink" href="#"><h2>Analytics</h2><p class="muted">Horizontal bar chart breakdown</p></a>
+            <section class="feature-card stack">
+                <h2>Raw Data Export</h2>
+                <p class="muted">Download feedback responses as Excel</p>
+                <button id="downloadBtn">Download Excel</button>
+            </section>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script>requireLogin();</script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

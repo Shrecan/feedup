@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedUp Report</title>
+    <link rel="stylesheet" href="css/report.css">
+</head>
+<body>
+    <main class="report-page">
+        <div class="report-shell">
+            <div class="report-actions">
+                <a class="back-button" id="backLink" href="home.html">Back</a>
+                <div class="session-name" id="sessionName">Loading report...</div>
+            </div>
+
+            <section class="report-card">
+                <table class="dashboard-table" aria-label="FeedUp department report">
+                    <thead>
+                        <tr>
+                            <th class="dashboard-title" colspan="7">Admin - Dashboard</th>
+                        </tr>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Data Source</th>
+                            <th>Rating</th>
+                            <th>Basis</th>
+                            <th></th>
+                            <th>Month</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportTableBody">
+                        <tr>
+                            <td colspan="7" class="loading-cell">Loading report data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>requireLogin();</script>
+    <script src="js/report.js"></script>
+</body>
+</html>

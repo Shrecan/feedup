@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: #f2f4f7;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.report-page {
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.report-shell {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+.report-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 16px;
+    border: 1px solid #111111;
+    background: #e6e6e6;
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.session-name {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.report-card {
+    overflow-x: auto;
+    background: #ffffff;
+    border: 1px solid #008000;
+}
+
+.dashboard-table {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    border: 1px solid #000000;
+    padding: 0;
+    height: 28px;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 1.15;
+}
+
+.dashboard-table th {
+    background: #c9c9c9;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dashboard-title {
+    height: 17px !important;
+    padding: 0 !important;
+    background: #c9c9c9 !important;
+    font-size: 13px !important;
+    font-weight: 700;
+}
+
+.parameter-cell,
+.department-cell {
+    text-align: left;
+    padding-left: 4px !important;
+}
+
+.department-cell {
+    height: 17px !important;
+    font-weight: 700;
+    background: #f3f3f3;
+}
+
+.parameter-cell {
+    background: #ffffff;
+}
+
+.source-cell,
+.basis-cell,
+.range-cell,
+.score-cell,
+.status-cell,
+.rating-cell {
+    text-align: center;
+}
+
+.source-cell {
+    width: 90px;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.rating-cell {
+    width: 70px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.basis-cell {
+    padding: 0 10px !important;
+    font-size: 12px;
+}
+
+.range-cell {
+    width: 58px;
+    font-size: 12px;
+}
+
+.score-cell {
+    width: 58px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.status-cell {
+    width: 62px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.traffic-red {
+    background: #ff0000;
+    color: #000000;
+}
+
+.traffic-yellow {
+    background: #ffff00;
+    color: #000000;
+}
+
+.traffic-green {
+    background: #008000;
+    color: #000000;
+}
+
+.status-green {
+    background: #008000;
+    color: #000000;
+}
+
+.status-yellow {
+    background: #ffff00;
+    color: #000000;
+}
+
+.status-red {
+    background: #ff0000;
+    color: #000000;
+}
+
+.loading-cell,
+.error-cell {
+    height: 72px !important;
+    text-align: center;
+    font-weight: 700;
+}
+
+.error-cell {
+    color: #b00000;
+}
+
+@media (max-width: 720px) {
+    .report-page {
+        padding: 12px;
+    }
+
+    .report-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .session-name {
+        text-align: left;
+    }
+}

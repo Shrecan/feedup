@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Link</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <main class="page">
+        <header class="topbar">
+            <div class="brand">FeedUp</div>
+            <a class="btn secondary" href="home.html">Home</a>
+        </header>
+        <section class="panel stack">
+            <h1>Generated Session Link</h1>
+            <div class="link-box">
+                <input type="text" id="generatedLink" readonly>
+                <button id="copyLinkBtn">Copy Link</button>
+            </div>
+            <a class="btn secondary" href="comment.html">View Sessions</a>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script>requireLogin();</script>
+    <script src="js/generate.js"></script>
+</body>
+</html>

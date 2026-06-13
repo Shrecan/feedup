@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedUp Admin</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <main class="page">
+        <header class="topbar">
+            <div class="brand">FeedUp</div>
+            <div class="topbar">
+                <a class="btn secondary" href="comment.html">View All Comments</a>
+                <a class="btn" href="createses.html">Create Session</a>
+                <button class="secondary" onclick="logout()">Logout</button>
+            </div>
+        </header>
+        <section class="panel stack">
+            <h1>Feedback Management System</h1>
+            <p class="muted">Manage feedback sessions, expire sessions, delete sessions, and review global comments.</p>
+        </section>
+        <section class="stack" style="margin-top: 24px;">
+            <h2>Sessions</h2>
+            <div id="sessionList" class="grid"></div>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+    <script>requireLogin();</script>
+    <script src="js/home.js"></script>
+</body>
+</html>
