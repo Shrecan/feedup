@@ -4,8 +4,8 @@ FeedUp is a full-stack Spring Boot web application designed to collect, analyze,
 
 ## 🌐 Live Deployment
 
-👉 **http://3.25.217.196:8080**
-*(Hosted on AWS EC2)*
+👉 **http://3.25.217.196:8080/home.html
+  *(Hosted on AWS EC2)*
 
 ---
 
