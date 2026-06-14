@@ -1,4 +1,4 @@
-# 🚀 FeedUp - AI Powered Feedback & Analytics System
+# 🚀 FeedUp - Feedback & Analytics System
 
 FeedUp is a full-stack Spring Boot web application designed to collect, analyze, and manage user feedback with real-time analytics. It is deployed on AWS EC2 and connected with a MySQL/MariaDB database for persistent storage.
 
