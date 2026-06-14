@@ -216,3 +216,131 @@ body {
         font-size: 0.8rem;
     }
 }
+/* =========================
+   EXTRA RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Large Tablets (landscape) */
+@media (max-width: 1024px) {
+    .response-container {
+        max-width: 500px;
+        padding: 3rem 2.5rem;
+    }
+
+    .response-title {
+        font-size: 1.9rem;
+    }
+
+    .response-message {
+        font-size: 1rem;
+    }
+
+    .success-icon svg {
+        width: 76px;
+        height: 76px;
+    }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 900px) {
+    .response-container {
+        max-width: 480px;
+        padding: 2.8rem 2.2rem;
+    }
+
+    .response-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+    .response-page {
+        padding: 1.25rem;
+    }
+
+    .response-container {
+        max-width: 420px;
+        padding: 2.3rem 1.8rem;
+        border-radius: 0.85rem;
+    }
+
+    .response-title {
+        font-size: 1.65rem;
+    }
+
+    .response-message {
+        font-size: 0.95rem;
+    }
+
+    .success-icon svg {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Medium phones */
+@media (max-width: 600px) {
+    .response-container {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .response-title {
+        font-size: 1.5rem;
+    }
+
+    .response-message {
+        font-size: 0.9rem;
+    }
+
+    .success-icon svg {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 425px) {
+    .response-container {
+        padding: 1.6rem 1.2rem;
+        border-radius: 0.6rem;
+    }
+
+    .response-title {
+        font-size: 1.25rem;
+    }
+
+    .response-message {
+        font-size: 0.85rem;
+    }
+
+    .success-icon {
+        margin-bottom: 0.9rem;
+    }
+
+    .success-icon svg {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 320px) {
+    .response-container {
+        padding: 1.3rem 1rem;
+    }
+
+    .response-title {
+        font-size: 1.1rem;
+    }
+
+    .response-message {
+        font-size: 0.8rem;
+    }
+
+    .success-icon svg {
+        width: 46px;
+        height: 46px;
+    }
+}
